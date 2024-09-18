@@ -1,6 +1,5 @@
-import '/ui/tampil_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import '/ui/tampil_data.dart'; // Sesuaikan dengan struktur file yang ada
 
 class FormData extends StatefulWidget {
   const FormData({Key? key}) : super(key: key);
@@ -13,49 +12,93 @@ class FormDataState extends State<FormData> {
   final _namaController = TextEditingController();
   final _nimController = TextEditingController();
   final _tahunController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Input Data"),
+        title: const Text("Input Data Mahasiswa"),
+        backgroundColor: const Color.fromARGB(255, 81, 178, 223),
       ),
-      body: Container(
-        margin: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            _textboxNama(),
-            _textboxNIM(),
-            _textboxTahun(),
-            _tombolSimpan()
-          ],
+      body: SingleChildScrollView(
+  child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          "Masukkan Data Mahasiswa",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-      ),
+        const SizedBox(height: 20),
+        _textboxNama(),
+        const SizedBox(height: 15),
+        _textboxNIM(),
+        const SizedBox(height: 15),
+        _textboxTahun(),
+        const SizedBox(height: 30),
+        _tombolSimpan(),
+      ],
+    ),
+  ),
+),
     );
   }
 
   _textboxNama() {
     return TextField(
-      decoration: const InputDecoration(labelText: "Nama"),
+      decoration: InputDecoration(
+        labelText: "Nama Mahasiswa",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        prefixIcon: const Icon(Icons.person),
+      ),
       controller: _namaController,
     );
   }
 
   _textboxNIM() {
     return TextField(
-      decoration: const InputDecoration(labelText: "NIM"),
+      decoration: InputDecoration(
+        labelText: "NIM Mahasiswa",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        prefixIcon: const Icon(Icons.badge),
+      ),
       controller: _nimController,
     );
   }
 
   _textboxTahun() {
     return TextField(
-      decoration: const InputDecoration(labelText: "Tahun Lahir"),
+      decoration: InputDecoration(
+        labelText: "Tahun Lahir",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        prefixIcon: const Icon(Icons.calendar_today),
+      ),
       controller: _tahunController,
+      keyboardType: TextInputType.number,
     );
   }
 
   _tombolSimpan() {
-    return ElevatedButton(
+    return SizedBox(
+      width: double.infinity, // Membuat tombol selebar layar
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 15),
+          backgroundColor: const Color.fromARGB(255, 81, 178, 223),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+        ),
         onPressed: () {
           String nama = _namaController.text;
           String nim = _nimController.text;
@@ -64,6 +107,11 @@ class FormDataState extends State<FormData> {
               builder: (context) =>
                   TampilData(nama: nama, nim: nim, tahun: tahun)));
         },
-        child: const Text('Simpan'));
+        child: const Text(
+          'Simpan',
+          style: TextStyle(fontSize: 18, color: Colors.white),
+        ),
+      ),
+    );
   }
 }
