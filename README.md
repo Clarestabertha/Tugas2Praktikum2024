@@ -1,7 +1,9 @@
 # Penjelasan Pertemuan 2 
 Nama : Claresta Berthalita Jatmika
+
 NIM : H1D022050
-Shift Baru : F
+
+Shift Baru: F
 
 ## Deskripsi Aplikasi
 Aplikasi ini adalah aplikasi flutter sederhana yang memungkinkan pengguna untuk menginput data mahasiswa berupa nama, NIM, dan tahun lahir lalu sistem akan menampilkan data yang sudah diinputkan pada halaman lain. 
