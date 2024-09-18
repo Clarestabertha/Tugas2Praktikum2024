@@ -9,8 +9,10 @@ Aplikasi ini adalah aplikasi flutter sederhana yang memungkinkan pengguna untuk 
 ## Hasil Fork dan Clone
 
 1. Fork repository github asprak ke dalam github sendiri
+![Screenshot Hasil fork](hasil_fork.PNG)
 
 2. Jika sudah berhasil, buka CMD dan jalankan perintah clone
+![Screenshot Hasil clone](hasil_clone.PNG)
 
 3. Jika file sudah berada pada direktori yang kita pilih selanjutnya jalankan
 ```
@@ -21,12 +23,6 @@ flutter pub get
 ```
 flutter run
 ```
-
-## Struktur Proyek
-- 'main.dart' : file yang berisi titik saat memulai aplikasi
-- 'ui/'
-    -'form_data.dart' : file yang berisi sebuah form yang harus diisi oleh pengguna
-    -'tampil_data.dart' : file yang berisi untuk menampilkan inputan dari pengguna pada form_data sebelumnya
 
 ## Penjelasan Alur Aplikasi
 ### 1. **Mengumpulkan data pengguna dengan formulir**
@@ -96,6 +92,7 @@ Umur mahasiswa akan dihitung dengan rumus 'DateTime.now().year - tahun;' dan men
 ### 5. **Tombol Kembali**
 Apabila di klik maka sistem akan menampilkan halaman sebelumnya yaitu, halaman formulir. dengan menggunakan kode 'Navigator.pop(context);'.
 
-## Screen Record Hasil
-![Screen record hasil](tugas_2.webm)
+## SS Hasil
+![Screenshot Hasil form](form_output.PNG)
+![Screenshot Hasil tampil](hasil_output.PNG)
 
